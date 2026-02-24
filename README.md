@@ -1,29 +1,30 @@
 # 🧩 Palindrome Checker Management System
 
-## Use Case 2 — Hardcode Palindrome
+## Use Case 3 — Reverse String Palindrome Check
 
 ### 📌 Description
 
-This use case validates a palindrome using character comparison from both ends of the string.
+This use case reverses the string and compares it with the original.
 
-Algorithm:
+Steps:
 
-* Compare first and last characters
-* Move inward
-* Stop if mismatch found
+* Traverse string in reverse
+* Build reversed string
+* Compare using equals()
 
 ---
 
 ### ⚙️ Complexity
 
 Time: O(n)
-Space: O(1)
+Space: O(n)
 
 ---
 
 ### 🖥 Sample Output
 
 Input text: madam
+Reversed text: madam
 Is it a Palindrome? : true
 
 ---

@@ -25,7 +25,7 @@ import java.util.Stack;
  * This use case helps understand how FIFO and LIFO
  * behaviors can be combined for symmetric comparison.
  *
- * @author Vineet Seth
+ * @author Rishika Raj 
  * @version 6.0
  */
 

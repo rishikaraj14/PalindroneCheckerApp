@@ -1,61 +1,59 @@
-import java.util.Deque;
 import java.util.LinkedList;
 
 /**
  *
  * MAIN CLASS - PalindromeCheckerApp
  *
- * Use Case 7: Deque-Based Optimized Palindrome Checker
+ * Use Case 8: Linked List Based Palindrome Checker
  *
  * Description:
- * This class validates a palindrome using a Deque
- * (Double Ended Queue) data structure.
+ * This class checks whether a string is a palindrome
+ * using a LinkedList.
  *
- * At this stage, the application:
- * - Inserts characters into a deque
- * - Removes characters from front and rear
- * - Compares them directly
- * - Displays the result
+ * Characters are added to the list and then compared
+ * by removing elements from both ends:
+ * - removeFirst()
+ * - removeLast()
  *
- * This approach eliminates the need for separate
- * reversal structures like Stack or Queue.
+ * This demonstrates how LinkedList supports
+ * double-ended operations for symmetric validation.
  *
  * @author Rishika Raj
- * @version 7.0
+ * @version 8.0
  */
 
 public class PalindromeCheckerApp {
 
     /**
-     * Application entry point for UC7.
+     * Application entry point for UC8.
      *
-     * @param args Command-Line arguments
+     * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
         // Define the input string
         String input = "level";
 
-        // Create a Deque
-        Deque<Character> deque = new LinkedList<>();
+        // Create a LinkedList to store characters
+        LinkedList<Character> list = new LinkedList<>();
 
-        // Insert characters into deque
+        // Add each character to the linked list
         for (char c : input.toCharArray()) {
-            deque.addLast(c);
+            list.add(c);
         }
 
-        // Flag to track palindrome status
+        // Flag to track palindrome state
         boolean isPalindrome = true;
 
-        // Compare front and rear characters
-        while (deque.size() > 1) {
-            if (deque.removeFirst() != deque.removeLast()) {
+        // Compare until only one or zero elements remain
+        while (list.size() > 1) {
+            if (!list.removeFirst().equals(list.removeLast())) {
                 isPalindrome = false;
                 break;
             }
         }
 
-        // Output result
+        // Display result
         System.out.println("Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome);
     }

@@ -1,52 +1,54 @@
 # 🧩 Palindrome Checker App
-## Use Case 10 — Case-Insensitive & Space-Ignored Palindrome
+## Use Case 11 — Object-Oriented Palindrome Service
 
 ### 📌 Objective
-To validate whether a string is a palindrome while ignoring spaces, special characters, and letter case.
+To implement palindrome validation using object-oriented design principles.
 
 ---
 
 ## 📖 Description
 
-This implementation preprocesses the input string before validation.
+This implementation encapsulates the palindrome logic inside a separate service class.
 
-Normalization includes:
-- Removing spaces and special characters
-- Converting all characters to lowercase
+The main class:
+- Creates a PalindromeService object
+- Calls the checkPalindrome() method
+- Displays the result
 
-After preprocessing, the palindrome logic compares characters from both ends of the normalized string.
-
-Example:
-"A man a plan a canal Panama"
+This design follows OOPS principles and improves modularity.
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- String preprocessing
-- Regular expressions (replaceAll)
-- Case normalization (toLowerCase)
-- Symmetric character comparison
+- Encapsulation
+- Single Responsibility Principle
+- Separation of concerns
+- Object instantiation
+- Method invocation
 
 ---
 
-## ⚙️ Data Structure Used
+## ⚙️ Design Structure
 
-- String (normalized string)
-- Character indexing
+Main Class:
+- Handles user input and output
+
+Service Class:
+- Contains palindrome logic
 
 ---
 
 ## ⏱ Complexity
 
 Time Complexity: O(n)  
-Space Complexity: O(n)
+Space Complexity: O(1)
 
 ---
 
 ## 🖥 Sample Output
 
-Input : A man a plan a canal Panama  
+Input : racecar  
 Is Palindrome? : true
 
 ---
@@ -54,10 +56,10 @@ Is Palindrome? : true
 ## ▶️ Compile & Run
 
 Compile:
-javac UseCase10PalindromeCheckerApp.java
+javac App/src/PalindromeChecker.java
 
 Run:
-java UseCase10PalindromeCheckerApp
+java -cp App/src PalindromeChecker
 
 ---
 

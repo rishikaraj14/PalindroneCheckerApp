@@ -1,83 +1,120 @@
 /**
  *
- * MAIN CLASS - PalindromeCheckerApp
+         * MAIN CLASS - UseCase13PalindromeCheckerApp
  *
- * Use Case 12: Strategy Pattern for Palindrome Algorithms
+         * Use Case 13: Performance Comparison
  *
- * Description:
- * This class demonstrates how different palindrome
- * validation algorithms can be selected dynamically
- * at runtime using the Strategy Design Pattern.
+         * Description:
+        * This class measures and compares the execution
+ * performance of palindrome validation algorithms.
  *
- * At this stage, the application:
- * - Defines a common PalindromeStrategy interface
- * - Implements a concrete Stack-based strategy
- * - Injects the strategy at runtime
- * - Executes the selected algorithm
+         * At this stage, the application:
+        * - Uses palindrome validation implementations
+ * - Captures execution start and end time
+ * - Calculates total execution duration
+ * - Displays benchmarking results
  *
- * No performance comparison is done in this use case.
- * The focus is purely on algorithm interchangeability.
+         * This use case focuses purely on performance
+ * measurement and algorithm comparison.
+        *
+        * The goal is to introduce benchmarking concepts.
  *
- * @author Rishika Raj
- * @version 12.0
- */
+         * @author Rishika Raj
+ * @version 13.0
+        */
 
-public class PalindromeCheckerApp {
+public class UseCase13PalindromeCheckerApp {
 
+    /**
+     * Application entry point for UC13.
+     *
+     * @param args Command-Line arguments
+     */
     public static void main(String[] args) {
 
-        String input = "Level";
-
-        // Strategy injection
-        PalindromeStrategy strategy = new StackStrategy();
-
-        // Execute selected strategy
-        boolean result = strategy.check(input.toLowerCase());
+        String input = "LeveL";
+        String normalized = input.toLowerCase();
 
         System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + result);
+        System.out.println();
+
+        // ==============================
+        // Two Pointer Benchmark
+        // ==============================
+        long start1 = System.nanoTime();
+        boolean result1 = twoPointer(normalized);
+        long end1 = System.nanoTime();
+
+        // ==============================
+        // Stack Benchmark
+        // ==============================
+        long start2 = System.nanoTime();
+        boolean result2 = stackMethod(normalized);
+        long end2 = System.nanoTime();
+
+        // ==============================
+        // Recursive Benchmark
+        // ==============================
+        long start3 = System.nanoTime();
+        boolean result3 = recursive(normalized, 0, normalized.length() - 1);
+        long end3 = System.nanoTime();
+
+        System.out.println("Is Palindrome? : " + result1);
+        System.out.println();
+        System.out.println("Execution Time Comparison:");
+        System.out.println("Two Pointer : " + (end1 - start1) + " ns");
+        System.out.println("Stack       : " + (end2 - start2) + " ns");
+        System.out.println("Recursive   : " + (end3 - start3) + " ns");
     }
-}
 
-/**
- * INTERFACE - PalindromeStrategy
- *
- * This interface defines a contract for all
- * palindrome checking algorithms.
- */
-interface PalindromeStrategy {
+    // ------------------------------
+    // Two Pointer Method
+    // ------------------------------
+    private static boolean twoPointer(String input) {
+        int start = 0;
+        int end = input.length() - 1;
 
-    boolean check(String input);
-}
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
 
-/**
- * CLASS - StackStrategy
- *
- * This class provides a Stack-based implementation
- * of the PalindromeStrategy interface.
- *
- * It uses LIFO behavior to reverse characters
- * and compare them with the original sequence.
- */
-class StackStrategy implements PalindromeStrategy {
-
-    @Override
-    public boolean check(String input) {
-
+    // ------------------------------
+    // Stack Method
+    // ------------------------------
+    private static boolean stackMethod(String input) {
         java.util.Stack<Character> stack = new java.util.Stack<>();
 
-        // Push each character onto the stack
         for (char c : input.toCharArray()) {
             stack.push(c);
         }
 
-        // Compare by popping from stack
         for (char c : input.toCharArray()) {
             if (c != stack.pop()) {
                 return false;
             }
         }
-
         return true;
+    }
+
+    // ------------------------------
+    // Recursive Method
+    // ------------------------------
+    private static boolean recursive(String input, int start, int end) {
+
+        if (start >= end) {
+            return true;
+        }
+
+        if (input.charAt(start) != input.charAt(end)) {
+            return false;
+        }
+
+        return recursive(input, start + 1, end - 1);
     }
 }

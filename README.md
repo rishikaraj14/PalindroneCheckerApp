@@ -1,29 +1,29 @@
 # 🧩 Palindrome Checker Management System
 
-## Use Case 4 — Character Array Based Validation
+## Use Case 5 — Stack Based Palindrome Checker
 
 ### 📌 Description
 
-This use case converts the string to a character array and compares elements using two pointers.
+This use case uses a Stack data structure (LIFO) to reverse characters and validate palindrome.
 
-Concepts:
+Steps:
 
-* char[]
-* Array indexing
-* Two-pointer comparison
+* Push characters
+* Pop characters
+* Compare with original
 
 ---
 
 ### ⚙️ Complexity
 
 Time: O(n)
-Space: Minimal
+Space: O(n)
 
 ---
 
 ### 🖥 Sample Output
 
-Input : radar
+Input : noon
 Is Palindrome? : true
 
 ---

@@ -1,28 +1,30 @@
-# PalindroneCheckerApp
 # 🧩 Palindrome Checker Management System
 
-## Use Case 1 — Application Entry & Welcome Message
+## Use Case 2 — Hardcode Palindrome
 
 ### 📌 Description
 
-This use case establishes the startup flow of the application.
+This use case validates a palindrome using character comparison from both ends of the string.
 
-The program:
+Algorithm:
 
-* Starts execution from `main()`
-* Displays welcome message
-* Shows application version
-* Confirms system initialization
+* Compare first and last characters
+* Move inward
+* Stop if mismatch found
 
-No palindrome validation logic is implemented yet.
+---
+
+### ⚙️ Complexity
+
+Time: O(n)
+Space: O(1)
 
 ---
 
 ### 🖥 Sample Output
 
-Welcome to the Palindrome Checker Management System
-Version : 1.0
-System initialized successfully
+Input text: madam
+Is it a Palindrome? : true
 
 ---
 

@@ -70,4 +70,4 @@ java -cp App/src PalindromeCheckerApp
 
 ## 👨‍💻 Author
 
-Vineet Seth
+Rishika Raj 

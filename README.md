@@ -1,8 +1,8 @@
 # 🧩 Palindrome Checker App
-## Use Case 8 — LinkedList Based Palindrome Checker
+## Use Case 9 — Recursive Palindrome Checker
 
 ### 📌 Objective
-To validate whether a string is a palindrome using a LinkedList data structure and double-ended comparison.
+To validate whether a string is a palindrome using recursion.
 
 ---
 
@@ -10,43 +10,42 @@ To validate whether a string is a palindrome using a LinkedList data structure a
 
 This implementation:
 
-- Converts the input string into a LinkedList of characters
-- Removes elements from both ends using:
-    - removeFirst()
-    - removeLast()
-- Compares characters until the list size becomes 0 or 1
-- Determines whether the string is a palindrome
+- Uses recursive method calls
+- Compares characters from start and end
+- Moves inward with each recursive call
+- Stops when:
+  - All characters match, or
+  - A mismatch is found
 
-This demonstrates how LinkedList supports symmetric validation using built-in double-ended operations.
+This demonstrates divide-and-conquer logic using recursion.
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- Singly Linked List
-- Node traversal
-- Double-ended operations
-- removeFirst() and removeLast()
-- Symmetric comparison logic
+- Recursion
+- Base condition
+- Call stack behavior
+- Divide-and-conquer approach
 
 ---
 
 ## ⚙️ Data Structure Used
 
-- LinkedList<Character>
+- Call Stack (Implicit through recursion)
 
 ---
 
 ## ⏱ Complexity
 
 Time Complexity: O(n)  
-Space Complexity: O(n)
+Space Complexity: O(n) (due to recursive call stack)
 
 ---
 
 ## 🖥 Sample Output
 
-Input : level  
+Input : madam  
 Is Palindrome? : true
 
 ---
@@ -54,10 +53,10 @@ Is Palindrome? : true
 ## ▶️ Compile & Run
 
 Compile:
-javac App/src/PalindromeCheckerApp.java
+javac App/src/PalindromeChecker.java
 
 Run:
-java -cp App/src PalindromeCheckerApp
+java -cp App/src PalindromeChecker
 
 ---
 

@@ -1,8 +1,8 @@
 # 🧩 Palindrome Checker App
-## Use Case 7 — Deque-Based Optimized Palindrome Checker
+## Use Case 8 — LinkedList Based Palindrome Checker
 
 ### 📌 Objective
-To validate whether a string is a palindrome using a Deque (Double Ended Queue) for efficient front and rear comparison.
+To validate whether a string is a palindrome using a LinkedList data structure and double-ended comparison.
 
 ---
 
@@ -10,28 +10,30 @@ To validate whether a string is a palindrome using a Deque (Double Ended Queue) 
 
 This implementation:
 
-- Inserts characters into a Deque
-- Removes first and last elements
-- Compares them directly
-- Confirms palindrome if all characters match
+- Converts the input string into a LinkedList of characters
+- Removes elements from both ends using:
+    - removeFirst()
+    - removeLast()
+- Compares characters until the list size becomes 0 or 1
+- Determines whether the string is a palindrome
 
-This approach is optimized because it avoids using separate data structures like Stack and Queue.
+This demonstrates how LinkedList supports symmetric validation using built-in double-ended operations.
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- Deque (Double Ended Queue)
-- Front and Rear Access
-- addLast(), removeFirst(), removeLast()
-- Direct symmetric comparison
-- Optimized data handling
+- Singly Linked List
+- Node traversal
+- Double-ended operations
+- removeFirst() and removeLast()
+- Symmetric comparison logic
 
 ---
 
 ## ⚙️ Data Structure Used
 
-- Deque<Character> (Implemented using LinkedList)
+- LinkedList<Character>
 
 ---
 

@@ -1,51 +1,52 @@
 # 🧩 Palindrome Checker App
-## Use Case 9 — Recursive Palindrome Checker
+## Use Case 10 — Case-Insensitive & Space-Ignored Palindrome
 
 ### 📌 Objective
-To validate whether a string is a palindrome using recursion.
+To validate whether a string is a palindrome while ignoring spaces, special characters, and letter case.
 
 ---
 
 ## 📖 Description
 
-This implementation:
+This implementation preprocesses the input string before validation.
 
-- Uses recursive method calls
-- Compares characters from start and end
-- Moves inward with each recursive call
-- Stops when:
-  - All characters match, or
-  - A mismatch is found
+Normalization includes:
+- Removing spaces and special characters
+- Converting all characters to lowercase
 
-This demonstrates divide-and-conquer logic using recursion.
+After preprocessing, the palindrome logic compares characters from both ends of the normalized string.
+
+Example:
+"A man a plan a canal Panama"
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- Recursion
-- Base condition
-- Call stack behavior
-- Divide-and-conquer approach
+- String preprocessing
+- Regular expressions (replaceAll)
+- Case normalization (toLowerCase)
+- Symmetric character comparison
 
 ---
 
 ## ⚙️ Data Structure Used
 
-- Call Stack (Implicit through recursion)
+- String (normalized string)
+- Character indexing
 
 ---
 
 ## ⏱ Complexity
 
 Time Complexity: O(n)  
-Space Complexity: O(n) (due to recursive call stack)
+Space Complexity: O(n)
 
 ---
 
 ## 🖥 Sample Output
 
-Input : madam  
+Input : A man a plan a canal Panama  
 Is Palindrome? : true
 
 ---
@@ -53,10 +54,10 @@ Is Palindrome? : true
 ## ▶️ Compile & Run
 
 Compile:
-javac App/src/PalindromeChecker.java
+javac UseCase10PalindromeCheckerApp.java
 
 Run:
-java -cp App/src PalindromeChecker
+java UseCase10PalindromeCheckerApp
 
 ---
 

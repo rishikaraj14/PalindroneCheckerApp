@@ -1,54 +1,55 @@
 # 🧩 Palindrome Checker App
-## Use Case 11 — Object-Oriented Palindrome Service
+## Use Case 12 — Strategy Pattern for Palindrome Algorithms
 
 ### 📌 Objective
-To implement palindrome validation using object-oriented design principles.
+To demonstrate dynamic selection of palindrome algorithms using the Strategy Design Pattern.
 
 ---
 
 ## 📖 Description
 
-This implementation encapsulates the palindrome logic inside a separate service class.
+This implementation introduces the Strategy Pattern.
 
-The main class:
-- Creates a PalindromeService object
-- Calls the checkPalindrome() method
-- Displays the result
+It includes:
 
-This design follows OOPS principles and improves modularity.
+- A PalindromeStrategy interface
+- A concrete StackStrategy implementation
+- Runtime strategy injection in the main class
+
+This design allows new palindrome algorithms to be added without modifying existing logic.
 
 ---
 
 ## 🔑 Key Concepts Used
 
+- Interface
+- Polymorphism
+- Strategy Design Pattern
+- Algorithm interchangeability
 - Encapsulation
-- Single Responsibility Principle
-- Separation of concerns
-- Object instantiation
-- Method invocation
 
 ---
 
 ## ⚙️ Design Structure
 
-Main Class:
-- Handles user input and output
-
-Service Class:
-- Contains palindrome logic
+PalindromeStrategy (Interface)
+↓
+StackStrategy (Concrete Implementation)
+↓
+PalindromeCheckerApp (Client)
 
 ---
 
-## ⏱ Complexity
+## ⏱ Complexity (Stack Strategy)
 
-Time Complexity: O(n)  
-Space Complexity: O(1)
+Time Complexity: O(n)
+Space Complexity: O(n)
 
 ---
 
 ## 🖥 Sample Output
 
-Input : racecar  
+Input : Level  
 Is Palindrome? : true
 
 ---
@@ -56,10 +57,10 @@ Is Palindrome? : true
 ## ▶️ Compile & Run
 
 Compile:
-javac App/src/PalindromeChecker.java
+javac App/src/PalindromeCheckerApp.java
 
 Run:
-java -cp App/src PalindromeChecker
+java -cp App/src PalindromeCheckerApp
 
 ---
 

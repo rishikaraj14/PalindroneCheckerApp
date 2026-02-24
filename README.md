@@ -1,31 +1,30 @@
 # 🧩 Palindrome Checker Management System
 
-## Use Case 3 — Reverse String Palindrome Check
+## Use Case 4 — Character Array Based Validation
 
 ### 📌 Description
 
-This use case reverses the string and compares it with the original.
+This use case converts the string to a character array and compares elements using two pointers.
 
-Steps:
+Concepts:
 
-* Traverse string in reverse
-* Build reversed string
-* Compare using equals()
+* char[]
+* Array indexing
+* Two-pointer comparison
 
 ---
 
 ### ⚙️ Complexity
 
 Time: O(n)
-Space: O(n)
+Space: Minimal
 
 ---
 
 ### 🖥 Sample Output
 
-Input text: madam
-Reversed text: madam
-Is it a Palindrome? : true
+Input : radar
+Is Palindrome? : true
 
 ---
 

@@ -61,3 +61,4 @@ public class UseCase9PalindromeCheckerApp {
         return check(s, start + 1, end - 1);
     }
 }
+console.log()

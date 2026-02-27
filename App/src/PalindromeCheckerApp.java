@@ -35,3 +35,5 @@ public class PalindromeCheckerApp {
         System.out.println("Welcome to the Palindrome Checker Management System\nVersion : 1.0\nSystem initialized successfully ");
     }
 }
+
+console.log()

@@ -118,3 +118,4 @@ public class UseCase13PalindromeCheckerApp {
         return recursive(input, start + 1, end - 1);
     }
 }
+console.log()
